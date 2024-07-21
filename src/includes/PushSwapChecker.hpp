@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ITester.hpp                                        :+:      :+:    :+:   */
+/*   PushSwapChecker.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/19 23:42:29 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/20 22:31:38 by nechaara         ###   ########.fr       */
+/*   Created: 2024/07/21 02:04:53 by nechaara          #+#    #+#             */
+/*   Updated: 2024/07/21 02:05:42 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITESTER_HPP
-# define ITESTER_HPP
+#ifndef PUSHSWAPCHECKER_HPP
+# define PUSHSWAPCHECKER_HPP
 
+# include <ITester.hpp>
 # include <iostream>
 # include <string>
 
-class ITester
+class PushSwapChecker : public ITester
 {
 	public:
-		virtual ~ITester() {};
-		virtual void initialize() = 0;
-		virtual void runTests() = 0;
-		virtual void cleanup() = 0;
-		virtual std::string getResults() const = 0;
+		void initialize() override;
+		void runTests() override;
+		void cleanup() override;
+		std::string getResults() const override;
 };
+
 #endif
