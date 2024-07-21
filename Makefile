@@ -6,7 +6,7 @@
 #    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/21 18:14:40 by nechaara          #+#    #+#              #
-#    Updated: 2024/07/21 18:39:37 by nechaara         ###   ########.fr        #
+#    Updated: 2024/07/21 18:50:53 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = 	src/minitalk_tester/MinitalkChecker.cpp \
 		src/push_swap_tester/PushSwapChecker.cpp \
 		src/main.cpp
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:%.cpp=%.o))
-FLAGS = -std=c++11
+FLAGS = -std=c++11 -Wall -Wextra -Werror
 
 all : $(NAME)
 

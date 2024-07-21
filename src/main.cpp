@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:16:39 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:40:52 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/21 18:52:48 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ static void errorMessage(std::string error_message) {
 	std::cerr << RED << error_message << CRESET << std::endl;
 }
 
+/*
 static void basicPrompt(std::string message) {
-	std::cerr << message << CRESET << std::endl;
+	std::cerr << CYAN << message << CRESET << std::endl;
 }
 
 static bool areStringEquals(std::string &a, std::string &b) {
 	return a == b;
 }
+*/
 
-static bool selectionMenu(void) {
+static void selectionMenu(void) {
 	std::cout << "42 - Terminator\n" << std::endl;
 	std::cout << "Please pick the tester you would like to use :" << std::endl;
 	std::cout << CYAN  << "\n1. Null Checker" << std::endl;
@@ -36,7 +38,7 @@ static bool selectionMenu(void) {
 	std::cout << "3. Minitalk" << CRESET << std::endl;
 }
 
-int main(int ac, char **av) {
+int main(void) {
 	std::string		prompt;
 	bool			valid_prompt;
 	unsigned int	prompt_size;
@@ -72,6 +74,9 @@ int main(int ac, char **av) {
 			}
 		} else {
 			errorMessage(WRONG_SELECTION);
+		}
+		if (tester) {
+			// TODO : implement test logic here
 		}
 	} while (!valid_prompt);
 }
