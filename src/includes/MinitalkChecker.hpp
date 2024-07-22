@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MinitalkChecker.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 02:09:20 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:22:47 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:57:31 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class MinitalkChecker : public ITester
 		void initialize() override;
 		void runTests() override;
 		void cleanup() override;
-		std::string getResults() const override;
+		void getResults() const override;
 };
 
 #endif
