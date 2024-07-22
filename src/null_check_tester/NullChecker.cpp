@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   NullChecker.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 23:37:58 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:50:18 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:58:37 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void NullChecker::runTests(void) {
 	
 }
 
-std::string NullChecker::getResults(void) const {
-	return nullptr;
+void NullChecker::getResults(void) const {
+
 }
 
 void NullChecker::cleanup(void) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PushSwapChecker.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 02:04:34 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:50:20 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:43:14 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,14 @@ void PushSwapChecker::runTests(void) {
 	
 }
 
-std::string PushSwapChecker::getResults(void) const {
-	return nullptr;
+void PushSwapChecker::getResults(void) const {
+
 }
 
 void PushSwapChecker::cleanup(void) {
+	
+}
+
+bool PushSwapChecker::isStackSorted(t_stack *head) {
 	
 }
