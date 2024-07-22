@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Macros.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 23:45:15 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:08:05 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:19:54 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define MINITALK 3
 # define QUIT_PROGRAM 4
 // ERRORS 
-# define BAD_INPUT "Input interrupted, exiting."
-# define WRONG_SELECTION "Please select a number associated with one of the testers"
+# define BAD_INPUT "Program interrupted, exiting."
+# define WRONG_SELECTION "Please select a number associated with one of the testers\n"
 # define SELECTION_MISMATCH "Selection does not concord to any options"
 
 
