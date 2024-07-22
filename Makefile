@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+         #
+#    By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/21 18:14:40 by nechaara          #+#    #+#              #
-#    Updated: 2024/07/21 18:50:53 by nechaara         ###   ########.fr        #
+#    Updated: 2024/07/22 18:07:12 by nechaara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,9 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 	@echo "Cleaned executable."
+
+run: all
+	@./$(NAME)
 
 re: fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:16:39 by nechaara          #+#    #+#             */
-/*   Updated: 2024/07/21 18:52:48 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:10:31 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,42 +20,43 @@ static void errorMessage(std::string error_message) {
 	std::cerr << RED << error_message << CRESET << std::endl;
 }
 
-/*
-static void basicPrompt(std::string message) {
-	std::cerr << CYAN << message << CRESET << std::endl;
+static void basicPrompt(std::string message, const char *color) {
+	std::cerr << color << message << CRESET << std::endl;
 }
 
-static bool areStringEquals(std::string &a, std::string &b) {
-	return a == b;
+static void displayLogo(void) {
+	basicPrompt("      __   ___ __ __             ___ __  __  ", RED);
+	basicPrompt(" |__|  _)   | |_ |__)|\\/|||\\ | /\\ | /  \\|__) ", RED);
+	basicPrompt("    | /__   | |__| \\ |  ||| \\|/--\\| \\__/| \\  \n", RED);
 }
-*/
 
 static void selectionMenu(void) {
-	std::cout << "42 - Terminator\n" << std::endl;
-	std::cout << "Please pick the tester you would like to use :" << std::endl;
-	std::cout << CYAN  << "\n1. Null Checker" << std::endl;
+	std::cout << "Please pick the tester you would like to use :\n" << std::endl;
+	std::cout << CYAN  << "1. Null Checker" << std::endl;
 	std::cout << "2. Push Swap Checker" << std::endl;
-	std::cout << "3. Minitalk" << CRESET << std::endl;
+	std::cout << "3. Minitalk" << std::endl;
+	std::cout << "4. Exit program\n" << CRESET << std::endl;
 }
 
 int main(void) {
 	std::string		prompt;
-	bool			valid_prompt;
 	unsigned int	prompt_size;
 	unsigned int	selection;
 	ITester			*tester;
 
-	valid_prompt = false;
 	tester = 0;
+	displayLogo();
 	do {
 		selectionMenu();
 		std::cin >> prompt;
 		if (std::cin.eof())
+		{
 			errorMessage(BAD_INPUT);
+			return (EXIT_FAILURE);
+		}
 		prompt_size = prompt.size();
 		selection = atoi(prompt.c_str());
-		if (prompt_size && (selection <= 3)) {
-			valid_prompt = true;
+		if (prompt_size && (selection <= 4)) {
 			switch (selection) {
 				case NULL_CHECKER:
 					tester = new NullChecker();
@@ -67,16 +68,19 @@ int main(void) {
 					tester = new MinitalkChecker();
 					break;
 				case QUIT_PROGRAM:
-					return 0;
+					return (EXIT_FAILURE);
 				default:
-					valid_prompt = false;
 					errorMessage(SELECTION_MISMATCH);
 			}
 		} else {
 			errorMessage(WRONG_SELECTION);
 		}
 		if (tester) {
-			// TODO : implement test logic here
+			tester->initialize();
+			tester->runTests();
+			tester->getResults();
+			tester->cleanup();
 		}
-	} while (!valid_prompt);
+	} while (true);
+	return (EXIT_SUCCESS);
 }
